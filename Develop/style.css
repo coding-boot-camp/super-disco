@@ -28,6 +28,7 @@ textarea{
 .time-block{
   text-align: center;
   border-radius: 15px;
+  
 }
 
 .row {
@@ -40,6 +41,9 @@ textarea{
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
+}
+.notes {
+  width: 80%
 }
 
 .past {
@@ -63,6 +67,7 @@ textarea{
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
   color: white;
+  width: 75px
 }
 
 .saveBtn i:hover {
