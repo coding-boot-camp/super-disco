@@ -1,10 +1,7 @@
-$(function(){
+$(document).ready(function() {
     var today = new Date();
     $("#currentDay").text(today);
    
-});
-
-$(document).ready(function() {
     var currentHour = moment().hour();
     
     $(".time-block").each(function(){
@@ -21,15 +18,63 @@ $(document).ready(function() {
             $(this).removeClass("present")
             $(this).children('textarea').addClass("future")
 
-
         }
-        //else if and else, when 
-       // timeBlockHour = currentHour : removeclass, adClass
-      // $(this).removeClass("present")
-
-        //timeBlockHour< currentHour
+    });
+    $(".saveBtn").click(function(e){
+        e.preventDefault()
+        // console.log("clicked")
+        value = $(this).siblings("textarea").val()
+        textAreaId = $(this).siblings("textarea")[0].id
+        console.log(textAreaId)
+        localStorage.setItem(textAreaId, value)
+    }
+    )
+    $(".notes").each(function(){
+        // console.log($(this)[0].id)
+        value = localStorage.getItem($(this)[0].id)
+        console.log(value)
+        $(this)[0].innerHTML = value
     })
-;
-    
+
+ 
 });
-// 
+//  var saveBtns = document.querySelector(".saveBtn").click((e) =>  buttonClickHandler(e))
+
+
+// $(document).ready(function() {
+//     $("#9").click(function(){
+//         alert("").text;
+//     });
+// })
+    
+
+
+
+// $(function(){
+//     event.preventDefault();
+
+// });
+
+// $(function(){
+//     // var today = new Date();
+//     // $("#currentDay").text(today);
+   
+// });
+// $(".saveBtn").click(function(){
+//     notes.push({
+//         Task: "Lunch",
+//         description: "store text"
+
+//     })
+//     localStorage.setItem("notes", JSON.stringify(notes));
+
+// var tasks = [];
+// const storeTask = (ev) =>{
+//     ev.preventDefault();
+//     var task ={
+//         id: Date.now(),
+//         content: $("notes").value
+//     }
+// }
+   
+

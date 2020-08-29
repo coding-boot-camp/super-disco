@@ -29,59 +29,59 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
-    <div class="container">
-      <!-- Timeblocks go here -->
-      <div class="time-block row" id="timeblock-9">
-        <div class="hour"><p> 9am  </p></div>
-        <textarea class="notes" id="" cols="8" rows="2"></textarea>
-        <button class="saveBtn"><span class="lock oi oi-lock-locked"></span></button>
-      </div>
-      <div class="time-block row" id="timeblock-10">
-        <div class="hour"><p>10am </p></div>
-        <textarea class="notes" id="" cols="8" rows="2"></textarea>
-        <button class="saveBtn"><span class="lock oi oi-lock-locked"></span></button>
-      </div>
-      <div class="time-block row" id="timeblock-11">
-        <div class="hour"><p>11am </p> </div>
-        <textarea class="notes" id="" cols="8" rows="2"></textarea>
-        <button class="saveBtn"><span class="lock oi oi-lock-locked"></span></button>
-      </div>
-      <div class="time-block row" id="timeblock-12">
-        <div class="hour"><p>12pm </p></div>
-        <textarea class="notes" id="" cols="8" rows="2"></textarea>
-        <button class="saveBtn"><span class="lock oi oi-lock-locked"></span></button>
-      </div>
-      <div class="time-block row" id="timeblock-13">
-        <div class="hour"><p> 1pm  </p></div>
-        <textarea class="notes" id="" cols="8" rows="2"></textarea>
-        <button class="saveBtn"><span class="lock oi oi-lock-locked"></span></button>
-      </div>
-      <div class="time-block row" id="timeblock-14">
-        <div class="hour"><p> 2pm  </p></div>
-        <textarea class="notes" id="" cols="8" rows="2"></textarea>
-        <button class="saveBtn"><span class="lock oi oi-lock-locked"></span></button>
-      </div>
-      <div class="time-block row" id="timeblock-15">
-        <div class="hour"><p>  3pm </p> </div>
-        <textarea class="notes" id="" cols="8" rows="2"></textarea>
-        <button class="saveBtn"><span class="lock oi oi-lock-locked"></span></button>
-      </div>
-      <div class="time-block row" id="timeblock-16">
-        <div class="hour"><p> 4pm  </p></div>
-        <textarea class="notes" id="" cols="8" rows="2"></textarea>
-        <button class="saveBtn"><span class="lock oi oi-lock-locked"></span></button>
-      </div>
-      <div class="time-block row" id="timeblock-17">
-        <div class="hour"><p> 5pm  </p> </div>
-        <textarea class="notes" id="" cols="8" rows="2"></textarea>
-        <button class="saveBtn"><span class="lock oi oi-lock-locked"></span></button>
-      </div>
-      <div class="time-block row" id="timeblock-18">
-        <div class="hour"> <p> 6pm  </p></div>
-        <textarea class="notes" id="" cols="8" rows="2"></textarea>
-        <button class="saveBtn"><span class="lock oi oi-lock-locked"></span></button>
-      </div>
-    </div>
+    <form class="container">        
+        <!-- Timeblocks go here -->
+        <div class="time-block row" id="timeblock-9">
+          <div class="hour"><p> 9am  </p></div>
+          <textarea class="notes" id="9am" cols="8" rows="2"></textarea>
+          <button class="saveBtn"><span class="lock oi oi-lock-locked"></span></button>
+        </div>
+        <div class="time-block row" id="timeblock-10">
+          <div class="hour"><p>10am </p></div>
+          <textarea class="notes" id="10am" cols="8" rows="2"></textarea>
+          <button class="saveBtn"><span class="lock oi oi-lock-locked"></span></button>
+        </div>
+        <div class="time-block row" id="timeblock-11">
+          <div class="hour"><p>11am </p> </div>
+          <textarea class="notes" id="11am" cols="8" rows="2"></textarea>
+          <button class="saveBtn"><span class="lock oi oi-lock-locked"></span></button>
+        </div>
+        <div class="time-block row" id="timeblock-12">
+          <div class="hour"><p>12pm </p></div>
+          <textarea class="notes" id="12pm" cols="8" rows="2"></textarea>
+          <button class="saveBtn"><span class="lock oi oi-lock-locked"></span></button>
+        </div>
+        <div class="time-block row" id="timeblock-13">
+          <div class="hour"><p> 1pm  </p></div>
+          <textarea class="notes" id="1pm" cols="8" rows="2"></textarea>
+          <button class="saveBtn"><span class="lock oi oi-lock-locked"></span></button>
+        </div>
+        <div class="time-block row" id="timeblock-14">
+          <div class="hour"><p> 2pm  </p></div>
+          <textarea class="notes" id="2pm" cols="8" rows="2"></textarea>
+          <button class="saveBtn"><span class="lock oi oi-lock-locked"></span></button>
+        </div>
+        <div class="time-block row" id="timeblock-15">
+          <div class="hour"><p>  3pm </p> </div>
+          <textarea class="notes" id="3pm" cols="8" rows="2"></textarea>
+          <button class="saveBtn"><span class="lock oi oi-lock-locked"></span></button>
+        </div>
+        <div class="time-block row" id="timeblock-16">
+          <div class="hour"><p> 4pm  </p></div>
+          <textarea class="notes" id="4pm" cols="8" rows="2"></textarea>
+          <button class="saveBtn"><span class="lock oi oi-lock-locked"></span></button>
+        </div>
+        <div class="time-block row" id="timeblock-17">
+          <div class="hour"><p> 5pm  </p> </div>
+          <textarea class="notes" id="5pm" cols="8" rows="2"></textarea>
+          <button class="saveBtn"><span class="lock oi oi-lock-locked"></span></button>
+        </div>
+        <div class="time-block row" id="timeblock-18">
+          <div class="hour"> <p> 6pm  </p></div>
+          <textarea class="notes" id="6pm" cols="8" rows="2"></textarea>
+          <button class="saveBtn"><span class="lock oi oi-lock-locked"></span></button>
+        </div>     
+    </form>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>

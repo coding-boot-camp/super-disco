@@ -16,7 +16,7 @@ https://k2gees.github.io/businessdayscheduler/
 ## Screenshots
 ![3 colors on planner](./images/3-colors.png)
 ![Jumbotron](./images/jumbotron.png)
-![Events saved](./images/.png)
+![Events saved](./images/events-saved.png)
 
 
 
