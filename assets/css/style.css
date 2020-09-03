@@ -2,6 +2,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
+  background-color: #ff6961;
 }
 
 textarea{
@@ -27,11 +28,12 @@ textarea{
 }
 
 .time-block{
-  /* text-align: center; */
+  text-align: center;
   border-radius: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
 }
 
 .row {
@@ -40,10 +42,16 @@ textarea{
   border-top: 1px solid white;;
 }
 
+.col {
+  padding-top: 5px;
+}
+
 .hour {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
+  text-align: right;
+  padding-top: 10px;
 }
 
 .past {
@@ -67,9 +75,16 @@ textarea{
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
   color: white;
+  height: 100%;
+  width: 100%;
+}
+
+.saveBtn:focus {
+  outline: none;
 }
 
 .saveBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
+  outline: none;
 }
