@@ -32,7 +32,7 @@ THEN the saved events persist
 * JavaScript
 
 ## Website
-![Work Day Scheduler](https://npokamestov.github.io/work-day-scheduler/)
+https://npokamestov.github.io/work-day-scheduler/
 
 ## Screenshot
 ![screenshot of deployed application](./assets/images/screenshot.png)
