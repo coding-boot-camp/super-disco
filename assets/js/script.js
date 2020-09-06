@@ -3,7 +3,7 @@ var today = moment().format("dddd, MMMM Do YYYY");
 var currentDay = $("#currentDay").text(today);
 // console.log(currentDay)
 var currentHour = moment().format("H A");
-console.log(currentHour)
+// console.log(currentHour)
 
 var events = [
     {time:"9 AM", event:""},
@@ -34,12 +34,14 @@ function rowColor(time) {
 		return "past";
 	} else {
 		return "present";
-	}
+    }
 };
-
+// loop through array and create variables from objects
 events.forEach(function(hourRow, index) {
     var hourCol = hourRow.time;
+    // console.log(hourCol)
     var rowColors = rowColor(hourCol)
+    // console.log(rowColor)
     var row = 
         // create a row for each object in the aray
         '<div class="time-block" id="'+index+'">\
@@ -51,23 +53,14 @@ events.forEach(function(hourRow, index) {
                 </div>\
             </div>\
         </div>';
-
-       
     $(".container").append(row);
 });
-
+// saves event on button click and writes to localStorge according to timeslot
 $(".saveBtn").on("click", function() {
-	var rowHourId = parseInt(
-		$(this)
-			.closest(".time-block")
-			.attr("id")
-	);
-	var event = $.trim(
-		$(this)
-			.parent()
-			.siblings("textarea")
-			.val()
-	);
+	var rowHourId = parseInt($(this).closest(".time-block").attr("id"));
+    // console.log(rowHourId)
+	var event = $(this).parent().siblings("textarea").val().trim();
+    // console.log(event)
 	events[rowHourId].event = event;
 
 	localStorage.setItem("eventSaved", JSON.stringify(events));
