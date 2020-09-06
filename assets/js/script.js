@@ -24,16 +24,51 @@ if (savedEvents) {
 }
 
 function rowColor(time) {
-    currentHour;
+    var timeNow = moment(currentHour, "H A")
     // console.log(currentHour)
     var eventHour = moment(time, "H A");
     // console.log(eventHour)
-    if (currentHour.isBefore(eventHour) === true) {
+    if (timeNow.isBefore(eventHour) === true) {
 		return "future";
-	} else if (currentHour.isAfter(eventHour) === true) {
+	} else if (timeNow.isAfter(eventHour) === true) {
 		return "past";
 	} else {
 		return "present";
 	}
 };
 
+events.forEach(function(hourRow, index) {
+    var hourCol = hourRow.time;
+    var rowColors = rowColor(hourCol)
+    var row = 
+        // create a row for each object in the aray
+        '<div class="time-block" id="'+index+'">\
+            <div class="row input-group no-gutters">\
+                <div class="col-sm-2 col-md-2 input-group-prepend hour justify-content-sm-start justify-content-md-end pr-2">'+hourCol+'</div>\
+                <textarea class="form-control '+rowColors+'">'+hourRow.event+'</textarea>\
+                <div class="col-2 input-group-append">\
+                    <button class="saveBtn btn-block" type="submit"><span class="fas fa-save"></span></button>\
+                </div>\
+            </div>\
+        </div>';
+
+       
+    $(".container").append(row);
+});
+
+$(".saveBtn").on("click", function() {
+	var rowHourId = parseInt(
+		$(this)
+			.closest(".time-block")
+			.attr("id")
+	);
+	var event = $.trim(
+		$(this)
+			.parent()
+			.siblings("textarea")
+			.val()
+	);
+	events[rowHourId].event = event;
+
+	localStorage.setItem("eventSaved", JSON.stringify(events));
+});
