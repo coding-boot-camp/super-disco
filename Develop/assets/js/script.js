@@ -19,7 +19,8 @@ var currentHour = moment().hour();
 
  var hourUpdater = function(){
     
-  
+    // loop over each one timeBlock 
+
 };
 
 hourUpdater();
@@ -30,14 +31,27 @@ hourUpdater();
 
 var loadTasks = function() {
 
+tasks = localStorage.getItem('tasks')
+
+if(tasks === null) {
+   tasks = [];
+}
+else{
+    tasks = JSON.parse(tasks);
+}
+
+// loop through tasks array and render items in local storage to the textarea
+
+for (var i = 0; i < tasks.length; i++){
+
+// grab the textareaArray loop through textarea array and set the text equal to tasks [i]    
+$(textareaArray[i]).text(tasks[i]);
+
+}
+
 };
 
 loadTasks();
 //  when the user clicks the save icon tasks are saved to local storage  
 
-$(".saveBtn").on("click", function() {
-
-     
-
-});
 

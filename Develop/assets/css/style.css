@@ -70,7 +70,3 @@ textarea{
   transition: all .3s ease-in-out;
   background-color: #000000;
 }
-
-.col-1 {
-  border-top: dashed;
-}
