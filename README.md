@@ -1,1 +1,4 @@
-# Work Day Scheduler Starter Code
+# Work Day Scheduler 
+
+## Purpose
+The purpose 
