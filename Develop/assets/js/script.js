@@ -5,21 +5,11 @@ currentTime = moment();
 currentDay.textContent = currentTime.format("dddd, MMMM Do- hh:mm");
 // select all time blocks, which will also give us acces to the children 
 
-var timeBlocks = document.querySelectorAll(".time-block")
-var textareaArray = document.querySelectorAll(".textarea");
+var timeBlocks = Array.from(document.querySelectorAll(".time-block"))
+var textareaArray = Array.from(document.querySelectorAll(".textarea"));
 var currentHour = moment().hour();
 
-var tasks = [{
-9: '', 
-10: '', 
-11: '',
-12: '', 
-1: '', 
-2: '',
-3: '',
-4: '',
-5: '',
-}];
+var tasks = [];
 
 var hourUpdater = function(){
     
@@ -96,6 +86,6 @@ loadTasks();
 
         tasks.push(userInput);
 
-        localStorage.setItem('hourTasks', JSON.stringify(tasks))    
+        localStorage.setItem('tasks', JSON.stringify(tasks))    
 
     });
