@@ -2,14 +2,14 @@
 
 var currentDay = document.querySelector("#currentDay");
 currentTime = moment();
-currentDay.textContent = currentTime.format("dddd, MMMM Do- hh:mm");
+currentDay.textContent = currentTime.format("dddd, MMMM Do - hh:mm");
 // select all time blocks, which will also give us acces to the children 
 
 var timeBlocks = Array.from(document.querySelectorAll(".time-block"))
 var textareaArray = Array.from(document.querySelectorAll(".textarea"));
 var currentHour = moment().hour();
 
-var tasks = [];
+var tasks = {9: '', 10: '', 11: '', 12: '', 1: '', 2: '', 3: '', 4: '', 5: ''};
 
 var hourUpdater = function(){
     
@@ -20,7 +20,6 @@ var hourUpdater = function(){
 
         // select the hour id and loop through 
         var timeBlockId =timeBlocks[i].firstElementChild.id;
-
 
         //  loop through the time block id and get the string value of hour (get rid of "hour-" by replacing with an empty string)
 
@@ -56,24 +55,28 @@ var hourUpdater = function(){
 hourUpdater();
 
  //Declare a 'tasks' variable that holds the parsed task items retrieved from 'localStorage'
-// If nothing in local storage, set the 'tasks' to empty array
 
 var loadTasks = function() {
 
-    tasks = localStorage.getItem('tasks')
+ var tasksFromStorage = localStorage.getItem('tasks')
     
-    if(tasks === null) {
-        tasks = [];
+    if(tasksFromStorage === null) {
+        return;
     }
     else{
-         tasks = JSON.parse(tasks);
+         tasks = JSON.parse(tasksFromStorage);
     }
-    // loop through task array and render items in local storage to textarea
-    for (var i = 0; i < tasks.length; i++){ 
        
-     $(textareaArray[i]).text(tasks[i]);
+     $(textareaArray[0]).text(tasks[9]);
+     $(textareaArray[1]).text(tasks[10]);
+     $(textareaArray[2]).text(tasks[11]);
+     $(textareaArray[3]).text(tasks[12]);
+     $(textareaArray[4]).text(tasks[1]);
+     $(textareaArray[5]).text(tasks[2]);
+     $(textareaArray[6]).text(tasks[3]);
+     $(textareaArray[7]).text(tasks[4]);
+     $(textareaArray[8]).text(tasks[5]);
 
-    }
 };
 
 loadTasks();
@@ -83,8 +86,9 @@ loadTasks();
     $(".saveBtn").on("click", function() {
 
         var userInput = $(this).siblings(".textarea").val()
-
-        tasks.push(userInput);
+        var time = $(this).siblings(".textarea").attr('id')
+        
+        tasks[time]= userInput
 
         localStorage.setItem('tasks', JSON.stringify(tasks))    
 
