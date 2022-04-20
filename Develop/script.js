@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 $( document ).ready(function() {
     $( ".saveBtn" ).click(function() {
         var value = $( this ).siblings(".description").val();
