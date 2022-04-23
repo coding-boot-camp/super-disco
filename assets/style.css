@@ -8,7 +8,7 @@ textarea{
   background: transparent;
   border: none;
   resize: none;
-  color: #000000;
+  color: black;
   border-left: 1px solid black;
   padding: 10px;
 }
@@ -18,16 +18,18 @@ textarea{
   background-color: transparent;
   color: black;
   border-radius: 0;
-  border-bottom: 10px solid black;
+  border-bottom: 2px solid black;
 }
 
 .description{
   white-space: pre-wrap;
+  border: 1px solid black
 }
 
 .time-block{
   text-align: center;
   border-radius: 15px;
+  color: black;
 }
 
 .row {
@@ -39,8 +41,10 @@ textarea{
 .hour {
   background-color: #ffffff;
   color: #000000;
-  border-top: 1px dashed #000000;
+  border-top: 2px solid #000000;
 }
+
+/* dynamic css options */
 
 .past {
   background-color: #d3d3d3;
@@ -53,7 +57,7 @@ textarea{
 }
 
 .future {
-  background-color: #77dd77;
+  background-color: #77c5dd;
   color: white;
 }
 

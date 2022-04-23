@@ -1,0 +1,20 @@
+{
+  "name": "work-day-scheduler",
+  "version": "1.0.0",
+  "description": "persistant work day planner using localStorage and moment.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Father-of-Cats/Work-Day-Scheduler.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Father-of-Cats/Work-Day-Scheduler/issues"
+  },
+  "homepage": "https://github.com/Father-of-Cats/Work-Day-Scheduler#readme"
+}
