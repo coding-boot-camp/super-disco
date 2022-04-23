@@ -1,10 +1,10 @@
+
 $(document).ready(function() {
     // This posts the current date and 24h clock in the header
     const today = moment().format('MMMM Do YY, H:mm:ss a')
     $("#currentDay").html(today);
 
-    // local Storage function
-    loadStorage = () => {
+    loadLocal = () => {
         // create an array for each row parent id
         const id = ["9","10","11","12","13","14","15","16","17"]
         // iterate through entire id list
@@ -14,7 +14,7 @@ $(document).ready(function() {
         // sets the value of each description to locally saved data of each corresponding id
             $(`#${idEl} .description`).val(localStorage.getItem(idEl))
         }
-    }
+    };
 
     // Saves to local storage on button click
     $(".btn").click(function() {
@@ -26,5 +26,15 @@ $(document).ready(function() {
         localStorage.setItem(hour,description)
     });
 
-    loadStorage();
+    loadLocal();
+
+    // Tracks time and changes colors of "row"
+    timeTracker = () => {
+        let time = moment().hours()
+
+        console.log(time);
+    }
+
+    timeTracker();
+
 });
