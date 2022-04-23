@@ -28,15 +28,14 @@ $(document).ready(function() {
     // tracks time and shifts row color
     timeTracker = () => {
         // loops through the .row DOM element activating the function
-        $(".row").each(function() {
+        $("textarea").each(function() {
             // current hour from moment js
-            let currentTime = moment().hours();
-            // pulls interger from id of each .row looped through
-            let timeBlock = parseInt($(this).attr("id"));
+            let currentTime = 12
+            // pulls interger from id of the parent row
+            let timeBlock = parseInt($(this).parent().attr("id"));
             if(timeBlock > currentTime) {
                 $(this).addClass("future")
                 $(this).removeClass("present")
-
             }else if(timeBlock == currentTime) {
                 $(this).removeClass("future")
                 $(this).removeClass("past")
