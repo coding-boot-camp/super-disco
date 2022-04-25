@@ -23,26 +23,21 @@ console.log(localStorageVariable)
     console.log( "ready!" );
 });
 
-function timeCheck() {
-  var currentHour = moment().hour();
-  $(".time-block").each(function () {
-    var blockTime = parseInt($(this).attr("id").split("hour")[1]);
+  function timeCheck() {
+    var currentHour = moment().hour();
+      console.log(currentHour)
+      for (i = 9; i <= 17; i++) {
 
-    if (blockTime < currentHour) {
-      $(this).removeClass("future");
-      $(this).removeClass("present");
-      $(this).addClass("past");
-    } else if (blockTime === currentHour) {
-      $(this).removeClass("past");
-      $(this).removeClass("future");
-      $(this).addClass("present");
-    } else {
-      $(this).removeClass("past")
-      $(this).removeClass("present")
-      $(this).addClass("future")
+        if (i < currentHour) {
+        $("#hour-" + i).addClass("past");
+        }else if (i > currentHour) {
+            $("#hour-" + i).addClass("future");
+        }else {
+            $("#hour-" + i).addClass("present");
+        }
     }
-  });
-}
+    };
+    
 
 function loadEvents() {
   scheduleObj = JSON.parse(localStorage.getItem("schedule")) || {};
