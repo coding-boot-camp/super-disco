@@ -47,7 +47,8 @@ function timeCheck() {
 function loadEvents() {
   scheduleObj = JSON.parse(localStorage.getItem("schedule")) || {};
   $.each(scheduleObj, function (time, description){
-    var scheduleKey.querySelector(".description").textContent = description;
+    var scheduleKey = document.getElementById(time);
+    scheduleKey.querySelector(".description").textContent = description;
   });
 
 };
